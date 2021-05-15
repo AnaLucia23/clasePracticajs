@@ -1,0 +1,206 @@
+/*General*/
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+main {text-align: center;}
+
+/*Banner*/
+
+header>div {
+    background-color: cornflowerblue;
+    text-align: center;
+    height: 40px;
+}
+
+header>div>a {
+    margin-left: 30px;
+    font-size: 20px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(18, 18, 165);
+}
+
+header>div>a>i {
+    margin-left: 5px;
+}
+
+header>div>a:hover {
+    color: rgb(132, 226, 230);
+    font-size: x-large;
+}
+
+
+/*Parte Central*/
+
+#titulo {
+    text-align: center;
+}
+
+
+main>nav {
+    background-color: cyan;
+    font-size: 20px;
+    height: 60px;
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+main>nav>li {
+    margin-top: 10px; margin-left: 30px;
+}
+
+main>section>article>div {
+    margin: 3px;
+}
+
+
+
+
+/*Footer*/
+
+footer>table {
+    font-size: 18px;
+    justify-content: center;
+}
+
+table,
+th,
+td {
+    border: 1px solid black;
+    padding: 15px;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+tr:nth-child(odd) {
+    background-color: teal;
+}
+
+tr:nth-child(even) {
+    background-color: turquoise;
+}
+
+table,
+th,
+td a {
+    color: black;
+}
+
+
+/*Pseudo Clases*/
+
+.miBoton { 
+ 
+    margin: 0px 5px; 
+    padding: 5px; 
+    box-sizing: border-box; 
+    border: none; 
+    outline: none; 
+    position: relative; 
+    color: black;
+    background-color: cornflowerblue;
+   } 
+
+.miBoton:hover {
+    color: white;
+    font-size: larger;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.miBoton.styleOne::before{ 
+    content: ''; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    z-index: -1; 
+    border: 2px solid rgb(0, 0, 0); 
+    transition: top, left, right, bottom, 200ms ease-in-out; 
+   } 
+
+   .miBoton.styleOnee:hover::before{ 
+    top: -4px; 
+    left: -4px; 
+    right: -4px; 
+    bottom: -4px; 
+   }
+
+.miBoton.styleTwo::before{ 
+    content: ''; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    z-index: -1; 
+    /* Se convierte en el background está una capa mas alejado del usuarios*/
+    background-color: rgba(8, 79, 233, 0.849); 
+    transition: transform 300ms ease-in-out; 
+    transform: scaleX(0); 
+    transform-origin: left; 
+   } 
+   .miBoton.styleTwo:hover::before{ transform: scaleX(1); } 
+   .miBoton.styleTwo { z-index: 1; } 
+
+   .miBoton.styleThree::before{ 
+    content: ''; 
+    position: absolute; 
+    top: 0px; 
+    left: 0px; 
+    right: 0px; 
+    bottom: 0px; 
+    z-index: -1; 
+    background-color: rgb(9, 36, 160); 
+    border-radius: 40%; 
+    transition: transform 500ms ease-in-out; 
+    transform: scale(1.5); 
+   } 
+   .miBoton.styleThree:hover::before{ transform:scale(0); } 
+   .miBoton.styleThree{ 
+    z-index: 1; 
+    overflow: hidden; 
+    background-color: rgba(8, 79, 233, 0.849);} 
+
+    .miBoton.styleFour::before{ 
+        content: ''; 
+        position: absolute; 
+        left: 0; 
+        right: 0; 
+        bottom: 0; 
+        height: 2px; 
+        background-color: rgba(8, 79, 233, 0.849); 
+        transition: transform 300ms ease-in-out; 
+        transform: scaleX(0); 
+       } 
+       .miBoton.styleFour:hover::before{ transform: scaleX(1); }
+
+/*Javascript*/
+
+.visible {
+    display: block;
+}
+
+.oculta {
+    display: none;
+}
+
+
+.opaca {opacity: 1;}
+.transparente {opacity: 0;}
+
+@keyframes bigger {
+    0% {
+        transform: scale(1.5);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.bigger{animation: bigger 2s ease-in-out;}
